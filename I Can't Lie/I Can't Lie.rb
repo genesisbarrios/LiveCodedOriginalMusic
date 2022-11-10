@@ -1,30 +1,35 @@
 # Welcome to Sonic Pi
 use_bpm 170
-pad1 = "/Users/genesisbarrios/Desktop/sonic pi files/Live Coded Originals/I Can't Lie/sonic-pi-stems/pad1.mp3"
-pad2 = "/Users/genesisbarrios/Desktop/sonic pi files/Live Coded Originals/I Can't Lie/sonic-pi-stems/PAD2.mp3"
-piano1 = "/Users/genesisbarrios/Desktop/sonic pi files/Live Coded Originals/I Can't Lie/sonic-pi-stems/piano1.mp3"
-piano2 = "/Users/genesisbarrios/Desktop/sonic pi files/Live Coded Originals/I Can't Lie/sonic-pi-stems/Piano2.mp3"
-organ = "/Users/genesisbarrios/Desktop/sonic pi files/Live Coded Originals/I Can't Lie/sonic-pi-stems/Organ.mp3"
-drums1 = "/Users/genesisbarrios/Desktop/sonic pi files/Live Coded Originals/I Can't Lie/sonic-pi-stems/DRUMS1.mp3"
-drums2 = "/Users/genesisbarrios/Desktop/sonic pi files/Live Coded Originals/I Can't Lie/sonic-pi-stems/DRUMS2.mp3"
-bell = "/Users/genesisbarrios/Desktop/sonic pi files/Live Coded Originals/I Can't Lie/sonic-pi-stems/BELL.mp3"
-bass1 = "/Users/genesisbarrios/Desktop/sonic pi files/Live Coded Originals/I Can't Lie/sonic-pi-stems/bass1.mp3"
-bass2 = "/Users/genesisbarrios/Desktop/sonic pi files/Live Coded Originals/I Can't Lie/sonic-pi-stems/Bass2.mp3"
-vox = "/Users/genesisbarrios/Desktop/sonic pi files/Live Coded Originals/I Can't Lie/sonic-pi-stems/vox.mp3"
+pad1 = "/Users/genesisbarrios/Desktop/sonic pi files/samples/ICan'tLieStems/pad1.mp3"
+pad2 = "/Users/genesisbarrios/Desktop/sonic pi files/samples/ICan'tLieStems/PAD2.mp3"
+piano1 = "/Users/genesisbarrios/Desktop/sonic pi files/samples/ICan'tLieStems/piano1.mp3"
+piano2 = "/Users/genesisbarrios/Desktop/sonic pi files/samples/ICan'tLieStems/Piano2.mp3"
+organ = "/Users/genesisbarrios/Desktop/sonic pi files/samples/ICan'tLieStems/Organ.mp3"
+altbeat1 = "/Users/genesisbarrios/Desktop/sonic pi files/samples/ICan'tLieStems/AltBeat1.mp3"
+altbeat2 = "/Users/genesisbarrios/Desktop/sonic pi files/samples/ICan'tLieStems/AltBeat2.mp3"
+drums1 = "/Users/genesisbarrios/Desktop/sonic pi files/samples/ICan'tLieStems/DRUMS1.mp3"
+drums2 = "/Users/genesisbarrios/Desktop/sonic pi files/samples/ICan'tLieStems/DRUMS2.mp3"
+bell = "/Users/genesisbarrios/Desktop/sonic pi files/samples/ICan'tLieStems/BELL.mp3"
+bass1 = "/Users/genesisbarrios/Desktop/sonic pi files/samples/ICan'tLieStems/bass1.mp3"
+bass2 = "/Users/genesisbarrios/Desktop/sonic pi files/samples/ICan'tLieStems/Bass2.mp3"
+vox = "/Users/genesisbarrios/Desktop/sonic pi files/samples/ICan'tLieStems/vox.mp3"
+bridgeBgVox = "/Users/genesisbarrios/Desktop/sonic pi files/samples/ICan'tLieStems/BridgeBgVox.mp3"
 
-
-stopBoolPad = true
-stopBoolPiano = true
-stopBoolBass = true
+stopBoolPad = false
+stopBoolPiano = false
+stopBoolBass = false
 stopBoolDrums = true
+stopBoolBeat = false
 
-stopBoolPad2 = false
-stopBoolPiano2 = false
-stopBoolBass2 = false
-stopBoolDrums2 = false
+stopBoolPad2 = true
+stopBoolPiano2 = true
+stopBoolBass2 = true
+stopBoolDrums2 = true
+stopBoolBeat2 = true
 
 stopBoolVox = true
-stopBoolBell = false
+StopBoolBridgeVox = false
+stopBoolBell = true
 
 live_loop :pad1 do
   if stopBoolPad
@@ -67,7 +72,7 @@ live_loop :bass1, sync: :pad1 do
   sleep 16
 end
 
-live_loop :bass2, sync: :pad2 do
+live_loop :bass2, sync: :piano2 do
   if stopBoolBass2
     stop
   end
@@ -92,6 +97,22 @@ live_loop :drums2, sync: :bass2 do
   sleep 16
 end
 
+live_loop :altbeat1, sync: :bass1 do
+  if stopBoolBeat
+    stop
+  end
+  sample altbeat1, "altbeat1", amp: 1.5
+  sleep 16
+end
+
+live_loop :altbeat2, sync: :bass1 do
+  if stopBoolBeat2
+    stop
+  end
+  sample altbeat2, "altbeat2", amp: 1.5
+  sleep 16
+end
+
 
 live_loop :vox, sync: :drums2 do
   if stopBoolVox
@@ -101,8 +122,16 @@ live_loop :vox, sync: :drums2 do
   sleep 16
 end
 
+live_loop :bridgeBgVox, sync: :drums2 do 
+  if stopBoolBridgeBgVox
+    stop
+  end
+  sample bridgeBgVox, "bridgeBgVox", amp: 2
+  sleep 16
+end
 
-live_loop :bell, sync: :drums1 do
+
+live_loop :bell, sync: :drums2 do
   if stopBoolBell
     stop
   end
