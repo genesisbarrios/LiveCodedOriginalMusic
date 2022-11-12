@@ -19,16 +19,16 @@ stopBoolPad = false
 stopBoolPiano = false
 stopBoolBass = false
 stopBoolDrums = true
-stopBoolBeat = false
+stopBoolBeat = true
 
 stopBoolPad2 = true
 stopBoolPiano2 = true
 stopBoolBass2 = true
-stopBoolDrums2 = true
+stopBoolDrums2 = false
 stopBoolBeat2 = true
 
 stopBoolVox = true
-StopBoolBridgeVox = false
+stopBoolBridgeBgVox = false
 stopBoolBell = true
 
 live_loop :pad1 do
@@ -72,7 +72,7 @@ live_loop :bass1, sync: :pad1 do
   sleep 16
 end
 
-live_loop :bass2, sync: :piano2 do
+live_loop :bass2, sync: :pad2 do
   if stopBoolBass2
     stop
   end
@@ -81,7 +81,7 @@ live_loop :bass2, sync: :piano2 do
 end
 
 
-live_loop :drums1, sync: :bass1 do
+live_loop :drums1, sync: :pad1 do
   if stopBoolDrums
     stop
   end
@@ -89,7 +89,7 @@ live_loop :drums1, sync: :bass1 do
   sleep 16
 end
 
-live_loop :drums2, sync: :bass2 do
+live_loop :drums2, sync: :pad2 do
   if stopBoolDrums2
     stop
   end
@@ -97,7 +97,7 @@ live_loop :drums2, sync: :bass2 do
   sleep 16
 end
 
-live_loop :altbeat1, sync: :bass1 do
+live_loop :altbeat1, sync: :pad1 do
   if stopBoolBeat
     stop
   end
@@ -105,7 +105,7 @@ live_loop :altbeat1, sync: :bass1 do
   sleep 16
 end
 
-live_loop :altbeat2, sync: :bass1 do
+live_loop :altbeat2, sync: :pad1 do
   if stopBoolBeat2
     stop
   end
@@ -114,7 +114,7 @@ live_loop :altbeat2, sync: :bass1 do
 end
 
 
-live_loop :vox, sync: :drums2 do
+live_loop :vox, sync: :pad2 do
   if stopBoolVox
     stop
   end
@@ -122,7 +122,7 @@ live_loop :vox, sync: :drums2 do
   sleep 16
 end
 
-live_loop :bridgeBgVox, sync: :drums2 do 
+live_loop :bridgeBgVox, sync: :pad1 do
   if stopBoolBridgeBgVox
     stop
   end
@@ -131,7 +131,7 @@ live_loop :bridgeBgVox, sync: :drums2 do
 end
 
 
-live_loop :bell, sync: :drums2 do
+live_loop :bell, sync: :pad2 do
   if stopBoolBell
     stop
   end
