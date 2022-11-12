@@ -21,18 +21,21 @@ stopBoolBass = false
 stopBoolDrums = true
 stopBoolBeat = true
 
+stopVerse = false
+
+stopBoolBridgeBgVox = true
+
+stopChorus = true
+
 stopBoolPad2 = true
 stopBoolPiano2 = true
 stopBoolBass2 = true
 stopBoolDrums2 = false
 stopBoolBeat2 = true
 
-stopBoolVox = true
-stopBoolBridgeBgVox = false
-stopBoolBell = true
 
 live_loop :pad1 do
-  if stopBoolPad
+  if stopVerse
     stop
   end
   sample pad1, "pad1", amp: 2
@@ -40,7 +43,7 @@ live_loop :pad1 do
 end
 
 live_loop :pad2 do
-  if stopBoolPad2
+  if stopChorus
     stop
   end
   sample pad2, "pad2", amp: 2
@@ -48,7 +51,7 @@ live_loop :pad2 do
 end
 
 live_loop :piano1, sync: :pad1 do
-  if stopBoolPiano
+  if stopVerse
     stop
   end
   sample piano1, "piano1", amp: 2
@@ -56,7 +59,7 @@ live_loop :piano1, sync: :pad1 do
 end
 
 live_loop :piano2, sync: :pad2 do
-  if stopBoolPiano2
+  if stopChorus
     stop
   end
   sample piano2, "piano2", amp: 2
@@ -65,7 +68,7 @@ end
 
 
 live_loop :bass1, sync: :pad1 do
-  if stopBoolBass
+  if stopVerse
     stop
   end
   sample bass1, "bass1", amp: 2
@@ -73,7 +76,7 @@ live_loop :bass1, sync: :pad1 do
 end
 
 live_loop :bass2, sync: :pad2 do
-  if stopBoolBass2
+  if stopChorus
     stop
   end
   sample bass2, "bass2", amp: 2
@@ -90,7 +93,7 @@ live_loop :drums1, sync: :pad1 do
 end
 
 live_loop :drums2, sync: :pad2 do
-  if stopBoolDrums2
+  if stopChorus
     stop
   end
   sample drums2, "drums2", amp: 1.5
@@ -98,7 +101,7 @@ live_loop :drums2, sync: :pad2 do
 end
 
 live_loop :altbeat1, sync: :pad1 do
-  if stopBoolBeat
+  if stopVerse
     stop
   end
   sample altbeat1, "altbeat1", amp: 1.5
@@ -115,7 +118,7 @@ end
 
 
 live_loop :vox, sync: :pad2 do
-  if stopBoolVox
+  if stopChorus
     stop
   end
   sample vox, "Vox", amp: 2
@@ -132,7 +135,7 @@ end
 
 
 live_loop :bell, sync: :pad2 do
-  if stopBoolBell
+  if stopChorus
     stop
   end
   sample bell, "bell", amp: 3
