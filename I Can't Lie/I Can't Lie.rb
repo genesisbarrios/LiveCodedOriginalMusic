@@ -5,8 +5,7 @@ pad2 = "/Volumes/Untitled 1/sonic pi files/samples/ICan'tLieStems/PAD2.mp3"
 piano1 = "/Volumes/Untitled 1/sonic pi files/samples/ICan'tLieStems/piano1.mp3"
 piano2 = "/Volumes/Untitled 1/sonic pi files/samples/ICan'tLieStems/Piano2.mp3"
 organ = "/Volumes/Untitled 1/sonic pi files/samples/ICan'tLieStems/Organ.mp3"
-altbeat1 = "/Volumes/Untitled 1/sonic pi files/samples/ICan'tLieStems/AltBeat1.mp3"
-altbeat2 = "/Volumes/Untitled 1/sonic pi files/samples/ICan'tLieStems/AltBeat2.mp3"
+altbeat = "/Volumes/Untitled 1/sonic pi files/samples/ICan'tLieStems/AltBeat.mp3"
 drums1 = "/Volumes/Untitled 1/sonic pi files/samples/ICan'tLieStems/DRUMS1.mp3"
 drums2 = "/Volumes/Untitled 1/sonic pi files/samples/ICan'tLieStems/DRUMS2.mp3"
 bell = "/Volumes/Untitled 1/sonic pi files/samples/ICan'tLieStems/BELL.mp3"
@@ -22,16 +21,15 @@ live_loop :Metronome do
   sleep 16
 end
 
-stopVerse = true
-stopChorus = false
+stopVerse = false
+stopChorus = true
 
-stopBridge = true
 stopBoolBridgeBgVox = true
 
 
 
 live_loop :pad1, sync: :click do
-  if stopVerse && stopBridge != false
+  if stopVerse
     stop
   end
   sample pad1, "pad1", amp: 2
@@ -49,20 +47,19 @@ live_loop :piano1, sync: :click do
 end
 
 live_loop :bass1, sync: :click do
-  if stopVerse && stopBridge != false
+  if stopVerse
     stop
   end
   sleep 16
   sample bass1, "bass1", amp: 2
 end
 
-live_loop :altbeat1, sync: :click do
+live_loop :altbeat, sync: :click do
   
   if stopVerse
     stop
   end
-  sleep 32
-  sample altbeat1, "altbeat1", amp: 1.5
+  sample altbeat, "altbeat", amp: 1.5
   sleep 16
 end
 
@@ -122,15 +119,6 @@ live_loop :bell, sync: :click do
   sleep 16
 end
 
-live_loop :altbeat2, sync: :click do
-  
-  if stopBridge
-    stop
-  end
-  sample altbeat2, "altbeat2", amp: 1.5
-  sleep 16
-end
-
 live_loop :bridgeBgVox, sync: :click do
   
   if stopBoolBridgeBgVox
@@ -140,9 +128,10 @@ live_loop :bridgeBgVox, sync: :click do
   sleep 16
 end
 
+
 ##| live_loop :arp2 do
 ##|   use_synth :dsaw
-##|   play (scale :d2, :minor_pentatonic, num_octaves: 3).tick, release: 0.35, amp: 0.5
+##|   play (scale :d2, :minor_pentatonic, num_octaves: 3).tick, release: 0.35, amp: 0.3
 ##|   sleep 0.25
 ##| end
 
