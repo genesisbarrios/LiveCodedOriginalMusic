@@ -11,100 +11,94 @@ ride = "/Volumes/Untitled 1/sonic pi files/samples/Crypto/Ride.mp3"
 lead = "/Volumes/Untitled 1/sonic pi files/samples/Crypto/Lead.mp3"
 
 
-stopBoolPad = false
-stopBoolPiano = false
-
-stopBoolBassV = true
-stopBoolRimV = true
-
-stopBoolBassC = false
-stopBoolRimC = false
-
+stopBoolVerse = true
 stopBoolKick = false
+stopBoolChorus = false
 
-stopBoolRide = false
-stopBoolBGVox = false
-stopBoolLead = false
 
-live_loop :pad do
-  if stopBoolPad
-    stop
-  end
-  sample pad, "pad", amp: 2
+live_loop :Metronome do
+  ##| play note :d4
+  puts "metronome"
+  cue :click
   sleep 16
 end
 
 
-live_loop :bassV do
-  sync :pad
-  if stopBoolBassV
-    stop
-  end
-  sample bassV, "bassV", amp: 1
+live_loop :pad do
+  sample pad, "pad", amp: 2
+  sleep 16
 end
 
-live_loop :bassC do
-  sync :pad
-  if stopBoolBassC
-    stop
-  end
-  sample bassC, "bassC", amp: 1
-end
-
-
-live_loop :rimV do
-  sync :pad
-  if stopBoolRimV
-    stop
-  end
-  sample rimV, "rimV", amp: 1
-end
-
-live_loop :rimC do
-  sync :pad
-  if stopBoolRimC
-    stop
-  end
-  sample rimC, "rimC", amp: 1.5
-end
-
-live_loop :kick do
-  sync :pad
+live_loop :kick, sync: :click do
   if stopBoolKick
     stop
   end
   sample kick, "kick", amp: 1.5
+  sleep 16
 end
 
-live_loop :ride do
-  sync :pad
-  if stopBoolRide
+live_loop :bassV, sync: :click do
+  if stopBoolVerse
     stop
   end
-  sample ride, "ride", amp: 1
+  sample bassV, "bassV", amp: 1
+  sleep 16
 end
 
-live_loop :voxBG do
-  sync :pad
-  if stopBoolBGVox
+live_loop :rimV, sync: :click do
+  if stopBoolVerse
+    stop
+  end
+  sample rimV, "rimV", amp: 1
+  sleep 16
+end
+
+live_loop :rimC, sync: :click do
+  if stopBoolChorus
+    stop
+  end
+  sample rimC, "rimC", amp: 1.5
+  sleep 16
+end
+
+live_loop :bassC, sync: :click do
+  if stopBoolChorus
+    stop
+  end
+  sample bassC, "bassC", amp: 1
+  sleep 16
+end
+
+live_loop :ride, sync: :click do
+  if stopBoolChorus
+    stop
+  end
+  sample ride, "ride", amp: 1.5
+  sleep 16
+end
+
+live_loop :voxBG, sync: :click do
+  if stopBoolChorus
     stop
   end
   sample voxBG, "voxBG", amp: 1.5
+  sleep 16
 end
 
 
-live_loop :lead do
-  sync :pad
-  if stopBoolLead
+live_loop :lead, sync: :click do
+  if stopBoolChorus
     stop
   end
-  sample lead, "lead", amp: 2
+  sample lead, "lead", amp: 1
+  sleep 16
 end
 
 
 live_loop :midi_piano do
   note, velocity = sync "/midi:mpk_mini_3:1/note_on"
-  synth :piano, note: note, amp:2, release: 5
+  use_real_time
+  synth :sine  , note: note, amp:1, release: 3
 end
 
 
