@@ -22,6 +22,8 @@ live_loop :Metronome do
 end
 
 stopVerse = false
+stopAltBeat = false
+
 stopChorus = true
 
 stopBoolBridgeBgVox = true
@@ -56,7 +58,7 @@ end
 
 live_loop :altbeat, sync: :click do
   
-  if stopVerse
+  if stopAltBeat
     stop
   end
   sample altbeat, "altbeat", amp: 1.5
@@ -129,11 +131,11 @@ live_loop :bridgeBgVox, sync: :click do
 end
 
 
-##| live_loop :arp2 do
-##|   use_synth :dsaw
-##|   play (scale :d2, :minor_pentatonic, num_octaves: 3).tick, release: 0.35, amp: 0.3
-##|   sleep 0.25
-##| end
+live_loop :arp2 do
+  use_synth :dsaw
+  play (scale :d2, :minor_pentatonic, num_octaves: 3).tick, release: 0.35, amp: 0.5
+  sleep 0.25
+end
 
 
 

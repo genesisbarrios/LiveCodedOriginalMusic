@@ -11,9 +11,10 @@ ride = "/Users/genesisbarrios/Desktop/sonic pi files/samples/Crypto/Ride.mp3"
 lead = "/Users/genesisbarrios/Desktop/sonic pi files/samples/Crypto/Lead.mp3"
 
 
-stopBoolVerse = true
-stopBoolKick = false
-stopBoolChorus = false
+stopBoolVerse = false
+stopBoolKick = true
+
+stopBoolChorus = true
 
 
 live_loop :Metronome do
@@ -78,7 +79,7 @@ live_loop :ride, sync: :click do
 end
 
 live_loop :voxBG, sync: :click do
-  if stopBoolChorus
+  if
     stop
   end
   sample voxBG, "voxBG", amp: 1.5
