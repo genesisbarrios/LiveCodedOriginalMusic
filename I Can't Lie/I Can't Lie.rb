@@ -22,7 +22,7 @@ live_loop :Metronome do
 end
 
 stopVerse = false
-stopAltBeat = false
+stopAltBeat = true
 
 stopChorus = true
 
@@ -129,15 +129,6 @@ live_loop :bridgeBgVox, sync: :click do
   sample bridgeBgVox, "bridgeBgVox", amp: 1
   sleep 16
 end
-
-
-live_loop :arp2 do
-  use_synth :dsaw
-  play (scale :d2, :minor_pentatonic, num_octaves: 3).tick, release: 0.35, amp: 0.5
-  sleep 0.25
-end
-
-
 
 live_loop :midi_piano do
   note, velocity = sync "/midi:mpk_mini_3:1/note_on"
