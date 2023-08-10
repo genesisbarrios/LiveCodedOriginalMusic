@@ -1,18 +1,19 @@
 # Welcome to Sonic Pi
 use_bpm 99
-pad = "/Volumes/Untitled 1/sonic pi files/samples/Crypto/Pad.mp3"
-rimV = "/Volumes/Untitled 1/sonic pi files/samples/Crypto/RimVerse.mp3"
-rimC = "/Volumes/Untitled 1/sonic pi files/samples/Crypto/RimChorus.mp3"
-bassV =  "/Volumes/Untitled 1/sonic pi files/samples/Crypto/BassVerse.mp3"
-bassC = "/Volumes/Untitled 1/sonic pi files/samples/Crypto/BassChorus.mp3"
-kick =  "/Volumes/Untitled 1/sonic pi files/samples/Crypto/Kick.mp3"
-voxBG =  "/Volumes/Untitled 1/sonic pi files/samples/Crypto/VoxBG.mp3"
-ride = "/Volumes/Untitled 1/sonic pi files/samples/Crypto/Ride.mp3"
-lead = "/Volumes/Untitled 1/sonic pi files/samples/Crypto/Lead.mp3"
+pad = "/Users/genesisbarrios/Desktop/sonic pi files/samples/Crypto/Pad.mp3"
+rimV = "/Users/genesisbarrios/Desktop/sonic pi files/samples/Crypto/RimVerse.mp3"
+rimC = "/Users/genesisbarrios/Desktop/sonic pi files/samples/Crypto/RimChorus.mp3"
+bassV =  "/Users/genesisbarrios/Desktop/sonic pi files/samples/Crypto/BassVerse.mp3"
+bassC = "/Users/genesisbarrios/Desktop/sonic pi files/samples/Crypto/BassChorus.mp3"
+kick =  "/Users/genesisbarrios/Desktop/sonic pi files/samples/Crypto/Kick.mp3"
+voxBG =  "/Users/genesisbarrios/Desktop/sonic pi files/samples/Crypto/VoxBG.mp3"
+ride = "/Users/genesisbarrios/Desktop/sonic pi files/samples/Crypto/Ride.mp3"
+lead = "/Users/genesisbarrios/Desktop/sonic pi files/samples/Crypto/Lead.mp3"
 
 
 stopBoolVerse = true
 stopBoolKick = false
+
 stopBoolChorus = false
 
 

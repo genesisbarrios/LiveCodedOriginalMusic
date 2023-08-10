@@ -1,18 +1,18 @@
 # Welcome to Sonic Pi
 use_bpm 170
-pad1 = "/Volumes/Untitled 1/sonic pi files/samples/ICan'tLieStems/pad1.mp3"
-pad2 = "/Volumes/Untitled 1/sonic pi files/samples/ICan'tLieStems/PAD2.mp3"
-piano1 = "/Volumes/Untitled 1/sonic pi files/samples/ICan'tLieStems/piano1.mp3"
-piano2 = "/Volumes/Untitled 1/sonic pi files/samples/ICan'tLieStems/Piano2.mp3"
-organ = "/Volumes/Untitled 1/sonic pi files/samples/ICan'tLieStems/Organ.mp3"
-altbeat = "/Volumes/Untitled 1/sonic pi files/samples/ICan'tLieStems/AltBeat.mp3"
-drums1 = "/Volumes/Untitled 1/sonic pi files/samples/ICan'tLieStems/DRUMS1.mp3"
-drums2 = "/Volumes/Untitled 1/sonic pi files/samples/ICan'tLieStems/DRUMS2.mp3"
-bell = "/Volumes/Untitled 1/sonic pi files/samples/ICan'tLieStems/BELL.mp3"
-bass1 = "/Volumes/Untitled 1/sonic pi files/samples/ICan'tLieStems/bass1.mp3"
-bass2 = "/Volumes/Untitled 1/sonic pi files/samples/ICan'tLieStems/Bass2.mp3"
-vox = "/Volumes/Untitled 1/sonic pi files/samples/ICan'tLieStems/vox.mp3"
-bridgeBgVox = "/Volumes/Untitled 1/sonic pi files/samples/ICan'tLieStems/BridgeBgVox.mp3"
+pad1 = "/Users/genesisbarrios/Desktop/sonic pi files/samples/ICan'tLieStems/pad1.mp3"
+pad2 = "/Users/genesisbarrios/Desktop/sonic pi files/samples/ICan'tLieStems/PAD2.mp3"
+piano1 = "/Users/genesisbarrios/Desktop/sonic pi files/samples/ICan'tLieStems/piano1.mp3"
+piano2 = "/Users/genesisbarrios/Desktop/sonic pi files/samples/ICan'tLieStems/Piano2.mp3"
+organ = "/Users/genesisbarrios/Desktop/sonic pi files/samples/ICan'tLieStems/Organ.mp3"
+altbeat = "/Users/genesisbarrios/Desktop/sonic pi files/samples/ICan'tLieStems/AltBeat.mp3"
+drums1 = "/Users/genesisbarrios/Desktop/sonic pi files/samples/ICan'tLieStems/DRUMS1.mp3"
+drums2 = "/Users/genesisbarrios/Desktop/sonic pi files/samples/ICan'tLieStems/DRUMS2.mp3"
+bell = "/Users/genesisbarrios/Desktop/sonic pi files/samples/ICan'tLieStems/BELL.mp3"
+bass1 = "/Users/genesisbarrios/Desktop/sonic pi files/samples/ICan'tLieStems/bass1.mp3"
+bass2 = "/Users/genesisbarrios/Desktop/sonic pi files/samples/ICan'tLieStems/Bass2.mp3"
+vox = "/Users/genesisbarrios/Desktop/sonic pi files/samples/ICan'tLieStems/vox.mp3"
+bridgeBgVox = "/Users/genesisbarrios/Desktop/sonic pi files/samples/ICan'tLieStems/BridgeBgVox.mp3"
 
 live_loop :Metronome do
   ##| play note :d4
@@ -22,6 +22,8 @@ live_loop :Metronome do
 end
 
 stopVerse = false
+stopAltBeat = true
+
 stopChorus = true
 
 stopBoolBridgeBgVox = true
@@ -56,7 +58,7 @@ end
 
 live_loop :altbeat, sync: :click do
   
-  if stopVerse
+  if stopAltBeat
     stop
   end
   sample altbeat, "altbeat", amp: 1.5
@@ -127,15 +129,6 @@ live_loop :bridgeBgVox, sync: :click do
   sample bridgeBgVox, "bridgeBgVox", amp: 1
   sleep 16
 end
-
-
-##| live_loop :arp2 do
-##|   use_synth :dsaw
-##|   play (scale :d2, :minor_pentatonic, num_octaves: 3).tick, release: 0.35, amp: 0.3
-##|   sleep 0.25
-##| end
-
-
 
 live_loop :midi_piano do
   note, velocity = sync "/midi:mpk_mini_3:1/note_on"

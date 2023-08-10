@@ -1,16 +1,16 @@
 # Welcome to Sonic Pi
 use_bpm 100
-guitar = "/Volumes/Untitled 1/sonic pi files/samples/SMSstems/guitar.mp3"
-pad = "/Volumes/Untitled 1/sonic pi files/samples/SMSstems/Pad.mp3"
-snV = "/Volumes/Untitled 1/sonic pi files/samples/SMSstems/SnVerse.mp3"
-snC = "/Volumes/Untitled 1/sonic pi files/samples/SMSstems/SnChorus.mp3"
-bassV =  "/Volumes/Untitled 1/sonic pi files/samples/SMSstems/BassVerse.mp3"
-bassC = "/Volumes/Untitled 1/sonic pi files/samples/SMSstems/BassChorus.mp3"
-kickV =  "/Volumes/Untitled 1/sonic pi files/samples/SMSstems/KickVerse.mp3"
-kickC =  "/Volumes/Untitled 1/sonic pi files/samples/SMSstems/KickChorus.mp3"
-voxBG =  "/Volumes/Untitled 1/sonic pi files/samples/SMSstems/ChorusBGVox.mp3"
-tambo = "/Volumes/Untitled 1/sonic pi files/samples/SMSstems/tambo.mp3"
-bongos = "/Volumes/Untitled 1/sonic pi files/samples/SMSstems/bongos.mp3"
+guitar = "/Users/genesisbarrios/Desktop/sonic pi files/samples/SMSstems/guitar.mp3"
+pad = "/Users/genesisbarrios/Desktop/sonic pi files/samples/SMSstems/Pad.mp3"
+snV = "/Users/genesisbarrios/Desktop/sonic pi files/samples/SMSstems/SnVerse.mp3"
+snC = "/Users/genesisbarrios/Desktop/sonic pi files/samples/SMSstems/SnChorus.mp3"
+bassV =  "/Users/genesisbarrios/Desktop/sonic pi files/samples/SMSstems/BassVerse.mp3"
+bassC = "/Users/genesisbarrios/Desktop/sonic pi files/samples/SMSstems/BassChorus.mp3"
+kickV =  "/Users/genesisbarrios/Desktop/sonic pi files/samples/SMSstems/KickVerse.mp3"
+kickC =  "/Users/genesisbarrios/Desktop/sonic pi files/samples/SMSstems/KickChorus.mp3"
+voxBG =  "/Users/genesisbarrios/Desktop/sonic pi files/samples/SMSstems/ChorusBGVox.mp3"
+tambo = "/Users/genesisbarrios/Desktop/sonic pi files/samples/SMSstems/tambo.mp3"
+bongos = "/Users/genesisbarrios/Desktop/sonic pi files/samples/SMSstems/bongos.mp3"
 
 stopBoolVerse = true
 stopBoolChorus = false
